@@ -67,11 +67,17 @@ void runSerialCommand(char cmd, int16_t value) {
     // increase volume
     int v = radio.getVolume();
     radio.setVolume(++v);
+    Serial.print("Volume: ");
+    Serial.print(v);
   } else if (cmd == '-') {
     // decrease volume
     int v = radio.getVolume();
     if (v > 0)
       radio.setVolume(--v);
+
+    Serial.print("Volume: ");
+    Serial.print(v);
+
   }
 
   else if (cmd == 'u') {
